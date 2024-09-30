@@ -6,9 +6,9 @@ int main(int argc, char **argv)
         ERROR;
     if (ft_c_parse(argc, argv) != 0)
         ERROR;
-    if (ft_content != 0)
+    if (ft_content(argv) != 0)
         ERROR;
-    if (ft_count_n != 0)
+    if (ft_count_n(argv) != 0)
         ERROR;
     stack_a = ft_numbers;
     if (!stack_a)

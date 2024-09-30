@@ -18,3 +18,24 @@ int ft_c_parse(int argc, char **argv)
     }
     return (0);
 }
+
+int ft_count_n(int argc, char **argv)
+{
+    int j;
+    int cont;
+
+    cont = 0;
+    while (argc != 0)
+    {
+        j = 0;
+        while (argv[argc][j])
+        {
+            if (ft_isdigit(argv[argc][j]) == 1 && (argv[argc][j + 1] == ' '
+                || argv[argc][j + 1] == '\0'))
+                cont++;   
+            j++;
+        }
+        argc--;
+    }
+    return (cont);
+}
