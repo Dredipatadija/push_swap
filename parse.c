@@ -61,3 +61,7 @@ int ft_content(int argc, char **argv)
     }
     return (0);
 }
+
+int ft_check_dup(int *stack_a)
+{
+}
