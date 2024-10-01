@@ -9,7 +9,7 @@ int main(int argc, char **argv)
         ERROR;
     if (ft_content(argc, argv) != 0)
         ERROR;
-    n_num = ft_count_n(argc, argv) != 0;
+    n_num = ft_count_n(argc, argv);
     if (n_num < 1)
         ERROR;
     stack_a = ft_numbers(argc, argv, n_num);
