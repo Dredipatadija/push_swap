@@ -15,6 +15,6 @@ int main(int argc, char **argv)
     stack_a = ft_numbers(argc, argv, n_num);
     if (!stack_a)
         ERROR;
-    if (ft_check_dup(stack_a) != 0)
+    if (ft_check_dup(stack_a, n_num) != 0)
         ERROR;
 }
