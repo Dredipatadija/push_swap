@@ -1,14 +1,16 @@
 int main(int argc, char **argv)
 {
     int *stack_a;
+    int n_num;
 
     if (argc < 2)
         ERROR;
     if (ft_c_parse(argc, argv) != 0)
         ERROR;
-    if (ft_content(argv) != 0)
+    if (ft_content(argc, argv) != 0)
         ERROR;
-    if (ft_count_n(argv) != 0)
+    n_num = ft_count_n(argc, argv) != 0;
+    if (n_num < 1)
         ERROR;
     stack_a = ft_numbers;
     if (!stack_a)

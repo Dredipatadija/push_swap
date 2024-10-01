@@ -39,3 +39,24 @@ int ft_count_n(int argc, char **argv)
     }
     return (cont);
 }
+
+int ft_content(int argc, char **argv)
+{
+    int j;
+
+    while (argc > 0)
+    {
+        j = 0;
+        while (argv[argc][j] != '\0')
+        {
+            if (ft_isdigit(argv[argc][j]) == 1)
+            {
+                argc--;
+                break ;
+            }
+            j++;
+        }
+        if (argv[argc][j] == '\0')
+            return (-1);
+    }
+}
