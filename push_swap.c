@@ -12,7 +12,7 @@ int main(int argc, char **argv)
     n_num = ft_count_n(argc, argv) != 0;
     if (n_num < 1)
         ERROR;
-    stack_a = ft_numbers;
+    stack_a = ft_numbers(argc, argv, n_num);
     if (!stack_a)
         ERROR;
     if (ft_check_dup(stack_a) != 0)
