@@ -8,6 +8,7 @@ void    ft_freen(char **str)
     free(str);
 }
 
+
 int *ft_numbers(int argc, char  **argv, int n_num)
 {
     int     *stack_a;
@@ -35,5 +36,5 @@ int *ft_numbers(int argc, char  **argv, int n_num)
         ft_freen(nstr);
         i++;
     }
-
+    return (stack_a);
 }
