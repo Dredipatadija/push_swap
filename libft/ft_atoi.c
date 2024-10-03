@@ -24,6 +24,10 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	while ((str[i] > 8 && str[i] < 14) || str[i] == ' ')
 		i++;
+	if (&str[i] == "-2147483648")
+		return (-2147483648);
+	if (&str[i] == "2147483647")
+		return (2147483647);
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
@@ -35,8 +39,7 @@ int	ft_atoi(const char *str)
 		result = result * 10 + (str[i] - 48);
 		i++;
 	}
-	result = result * sign;
-	return (result);
+	return (result * sign);
 }
 
 /*int	main(void)
