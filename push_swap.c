@@ -1,6 +1,6 @@
 int main(int argc, char **argv)
 {
-    int *stack_a;
+    int *num;
     int n_num;
 
     if (argc < 2)
@@ -12,9 +12,9 @@ int main(int argc, char **argv)
     n_num = ft_count_n(argc, argv);
     if (n_num < 1)
         ft_error1(void);
-    stack_a = ft_numbers(argc, argv, n_num);
-    if (!stack_a)
+    num = ft_numbers(argc, argv, n_num);
+    if (!num)
         ft_error1(void);
-    if (ft_check_dup(stack_a, n_num) != 0)
-        ft_error2(stack_a);
+    if (ft_check_dup(num, n_num) != 0)
+        ft_error2(num);
 }

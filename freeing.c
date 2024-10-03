@@ -8,8 +8,8 @@ void    ft_freen(char **str)
     free(str);
 }
 
-void    *ft_freestack(int *stack)
+void    *ft_freeint(int *num)
 {
-    free(stack);
+    free(num);
     return (NULL);
 }

@@ -62,7 +62,7 @@ int ft_content(int argc, char **argv)
     return (0);
 }
 
-int ft_check_dup(int *stack_a, int cont)
+int ft_check_dup(int *num, int cont)
 {
     int i;
     int j;
@@ -74,7 +74,7 @@ int ft_check_dup(int *stack_a, int cont)
         j = i + 1;
         while (j < cont)
         {
-            if (stack_a[i] == stack_a[j])
+            if (num[i] == num[j])
                 return (-1);
             j++;
         }

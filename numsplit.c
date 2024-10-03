@@ -37,14 +37,14 @@ ft_intlimit(char **str, int *stack)
 
 int *ft_numbers(int argc, char  **argv, int n_num)
 {
-    int     *stack_a;
+    int     *num;
     int     i;
     int     n;
     int     s;
     char    **nstr;
 
-    stack_a = (int *)malloc(sizeof(int) * n_num);
-    if (!stack_a)
+    num = (int *)malloc(sizeof(int) * n_num);
+    if (!num)
         return (NULL);
     i = 1;
     n = 0;
@@ -52,12 +52,12 @@ int *ft_numbers(int argc, char  **argv, int n_num)
     {
         nstr = ft_split(argv[i++], ' ');
         if (!nstr)
-            return (ft_freestack(stack_a));
-        ft_intlimit(nstr, stack_a);
+            return (ft_freestack(num));
+        ft_intlimit(nstr, num);
         s = 0;
         while (nstr[s])
-            stack_a[n++] = ft_atoi(nstr[s++]);
+            num[n++] = ft_atoi(nstr[s++]);
         ft_freen(nstr);
     }
-    return (stack_a);
+    return (num);
 }

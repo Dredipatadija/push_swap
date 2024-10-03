@@ -4,9 +4,9 @@ void    ft_error1(void)
     exit(1);
 }
 
-void    ft_error2(int *stack)
+void    ft_error2(int *num)
 {
-    free(stack);
+    free(num);
     write(2, "Error\n", 6);
     exit(1);
 }
