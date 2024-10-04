@@ -1,7 +1,9 @@
 int main(int argc, char **argv)
 {
-    int *num;
-    int n_num;
+    int     *num;
+    int     n_num;
+    t_stack stack_a;
+    t_stack stack_b;
 
     if (argc < 2)
         exit(1);
