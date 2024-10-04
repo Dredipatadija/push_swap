@@ -9,5 +9,6 @@ int    ft_push_(t_stack *stack, int data, int index)
     new->index = index;
     new->next = stack->head;
     stack->head = new;
+    stack->size++;
     return (0);
 }
