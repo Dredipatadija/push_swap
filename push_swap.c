@@ -19,4 +19,5 @@ int main(int argc, char **argv)
         ft_error1(void);
     if (ft_check_dup(num, n_num) != 0)
         ft_error2(num);
+    ft_init(&stack_a, &stack_b, num, n_num);
 }
