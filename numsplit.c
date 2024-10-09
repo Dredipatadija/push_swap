@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 ft_numlen(char *str)
 {
     int i;

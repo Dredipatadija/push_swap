@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 int main(int argc, char **argv)
 {
     int     *num;
@@ -8,15 +10,15 @@ int main(int argc, char **argv)
     if (argc < 2)
         exit(1);
     if (ft_c_parse(argc, argv) != 0)
-        ft_error1(void);
+        ft_error1();
     if (ft_content(argc, argv) != 0)
-        ft_error1(void);
+        ft_error1();
     n_num = ft_count_n(argc, argv);
     if (n_num < 1)
-        ft_error1(void);
+        ft_error1();
     num = ft_numbers(argc, argv, n_num);
     if (!num)
-        ft_error1(void);
+        ft_error1();
     if (ft_check_dup(num, n_num) != 0)
         ft_error2(num);
     ft_init(&stack_a, &stack_b, num, n_num);

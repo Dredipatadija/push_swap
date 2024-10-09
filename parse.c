@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 int ft_c_parse(int argc, char **argv)
 {
     int i;

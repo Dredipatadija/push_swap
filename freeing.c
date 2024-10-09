@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 void    ft_freen(char **str)
 {
     int i;

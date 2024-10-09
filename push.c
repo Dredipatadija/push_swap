@@ -1,4 +1,6 @@
-int    ft_push_(t_stack *stack, int data, int index)
+#include "push_swap.h"
+
+int    ft_push(t_stack *stack, int data, int index)
 {
     t_node  *new;
 

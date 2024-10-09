@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 long long   ft_atoll_check(char *str)
 {
     long long  result;
