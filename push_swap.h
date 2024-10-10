@@ -30,6 +30,6 @@ void        *ft_freeint(int *num);
 void        ft_error1(void);
 void        ft_error2(int *num);
 void        ft_init(t_stack *stack_a, t_stack *stack_b, int *num, int n);
-int         ft_push(t_stack *stack, int data, int index);
+int         ft_push(t_stack *stack, int data);
 
 #endif

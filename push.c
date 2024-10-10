@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int    ft_push(t_stack *stack, int data, int index)
+int    ft_push(t_stack *stack, int data)
 {
     t_node  *new;
 
@@ -8,7 +8,6 @@ int    ft_push(t_stack *stack, int data, int index)
     if (!new)
         return (1);
     new->data = data;
-    new->index = index;
     new->next = stack->head;
     stack->head = new;
     stack->size++;
