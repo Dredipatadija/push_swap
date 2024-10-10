@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-ft_numlen(char *str)
+int ft_numlen(char *str)
 {
     int i;
     int len;
@@ -17,7 +17,7 @@ ft_numlen(char *str)
     return (len);
 }
 
-ft_intlimit(char **str, int *stack)
+void    ft_intlimit(char **str, int *stack)
 {
     int i;
 
@@ -34,7 +34,6 @@ ft_intlimit(char **str, int *stack)
         }
         i++;
     }
-    return (0);
 }
 
 int *ft_numbers(int argc, char  **argv, int n_num)

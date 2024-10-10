@@ -37,17 +37,18 @@ int ft_index(int *num, int data)
 void    ft_init(t_stack *stack_a, t_stack *stack_b, int *num, int n)
 {
     t_node  *node;
+    int     i;
 
     stack_a->head = NULL;
     stack_a->size = 0;
     stack_b->head = NULL;
     stack_b->size = 0;
-    n = n - 1;
-    while (n > -1)
+    i = n - 1;
+    while (i > -1)
     {
         if (ft_push(stack_a, num[n]) != 0)
             ft_error2(num);
-        n--;
+        i--;
     }
     ft_sort(num, n);
     node = stack_a->head;

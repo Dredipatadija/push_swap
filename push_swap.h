@@ -23,7 +23,7 @@ int         ft_content(int argc, char **argv);
 int         ft_check_dup(t_stack *stack, int cont);
 int         *ft_numbers(int argc, char **argv, int n_num);
 int         ft_numlen(char *str);
-int         ft_intlimit(char **str, int *stack);
+void        ft_intlimit(char **str, int *stack);
 long long   ft_atoll_check(char *str);
 void        ft_freen(char **str);
 void        *ft_freeint(int *num);
