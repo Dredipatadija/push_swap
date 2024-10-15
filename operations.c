@@ -26,12 +26,16 @@ void	ft_push(t_stack *src, t_stack *dst)
 	dst->size++;
 }
 
-void	ft_rotate(t_stack *stack)
+void	ft_rotate(t_stack *stack, int n)
 {
 	t_node	*temp;
+	int		i;
 
+	i  = 0;
 	if (stack->size < 2 || !stack->head)
 		return ;
+	while (i < n)
+	{
 	temp = stack->head;
 	stack->head = temp->next;
 	while (temp->next)
@@ -39,20 +43,27 @@ void	ft_rotate(t_stack *stack)
 	temp->next = stack->head;
 	stack->head = stack->head->next;
 	temp->next->next = NULL;
+	}
 }
 
-void	ft_rrotate(t_stack *stack)
+void	ft_rrotate(t_stack *stack, int n)
 {
 	t_node	*temp;
 	t_node	*last;
+	int		i;
 
 	if (stack->size < 2 || !stack->head)
 		return ;
-	temp = stack->head;
-	while (temp->next->next)
-		temp = temp->next;
-	last = temp->next;
-	temp->next = NULL;
-	last->next = stack->head;
-	stack->head = last;
+	i = 0;
+	while (i < n)
+	{
+		temp = stack->head;
+		while (temp->next->next)
+			temp = temp->next;
+		last = temp->next;
+		temp->next = NULL;
+		last->next = stack->head;
+		stack->head = last;
+		i++;
+	}
 }
