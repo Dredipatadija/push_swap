@@ -2,18 +2,17 @@
 
 void	ft_selection_sort(t_stack *stack_a, t_stack *stack_b, len)
 {
-	t_node	*node;
 	int		index;
 	int		cont;
 
 	cont = len;
 	while (cont > 2)
 	{
-		index = ft_getindex(stack_a);
+		index = ft_getpos(stack_a);
 		if (index <= (len / 2))
 			ft_rotate(stack_a, index);
 		else
-			ft_rrotate(stack_a, len - index);
+			ft_rrotate(stack_a, cont - index);
 		ft_push(stack_a, stack_b);
 		cont--;
 	}
