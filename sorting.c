@@ -7,13 +7,20 @@ void	ft_selection_sort(t_stack *stack_a, t_stack *stack_b, len)
 	int		cont;
 
 	cont = len;
-	index = ft_getindex(stack_a);
-	while (cont < (len - 2))
+	while (cont > 2)
 	{
+		index = ft_getindex(stack_a);
 		if (index <= (len / 2))
-			ft_rotate(stack_a, index - 1);
-
+			ft_rotate(stack_a, index);
+		else
+			ft_rrotate(stack_a, len - index);
+		ft_push(stack_a, stack_b);
+		cont--;
 	}
+	if (stack_a->head->data > stack_a->head->next->data)
+		ft_swap(stack_a);
+	while (stack_b->size > 0)
+		ft_push(stack_b, stack_a);
 }
 
 void	ft_sort(t_stack *stack_a, t_stack *stack_b, int cont)

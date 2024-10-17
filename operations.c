@@ -36,13 +36,14 @@ void	ft_rotate(t_stack *stack, int n)
 		return ;
 	while (i < n)
 	{
-	temp = stack->head;
-	stack->head = temp->next;
-	while (temp->next)
-		temp = temp->next;
-	temp->next = stack->head;
-	stack->head = stack->head->next;
-	temp->next->next = NULL;
+		temp = stack->head;
+		stack->head = temp->next;
+		while (temp->next)
+			temp = temp->next;
+		temp->next = stack->head;
+		stack->head = stack->head->next;
+		temp->next->next = NULL;
+		i++;
 	}
 }
 
