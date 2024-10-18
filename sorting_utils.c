@@ -26,7 +26,27 @@ int	ft_getpos(t_stack *stack)
 		if (i->data < min)
 			min = i->data;
 		i = i->next;
+	}
+	i = stack->head;
+	while (i->data != min)
+	{
+		i = i->next;
 		pos++;
 	}
 	return (pos);
+}
+
+ft_squareroot(int n)
+{
+	int	i;
+
+	if (n < 4)
+		return (1);
+	i = 2;
+	while (i * i < n)
+		i++;
+	if (i * i > n)
+		if (n - ((i - 1) * (i - 1)) < n - (i * i))
+			return (i - 1);
+	return (i);
 }
