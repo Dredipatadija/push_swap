@@ -15,3 +15,16 @@ void	*ft_freeint(int *num)
 	free(num);
 	return (NULL);
 }
+
+void	ft_freest(t_stack *stack)
+{
+	t_node	*tmp;
+
+	while (stack->head)
+	{
+		tmp = stack->head;
+		stack->head = stack->head->next;
+		free(tmp);
+	}
+	free(stack);
+}

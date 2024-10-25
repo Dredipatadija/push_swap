@@ -50,7 +50,28 @@ void	ft_ksort_atob(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-void	ft_sort(t_stack *stack_a, t_stack *stack_b, int cont)
+void	ft_sort(t_stack *stack_a, t_stack *stack_b, int cont, int *num)
+{
+	int	i;
+
+	i = 0;
+	while (i < cont)
+	{
+		ft_push_back(stack_a, num[i]);
+		i++;
+	}
+	if (cont == 2)
+		ft_swap(stack_a);
+	else if (cont < 11)
+		ft_selection_sort(stack_a, stack_b);
+	else if (cont > 10)
+	{
+		ft_ksort_atob(stack_a, stack_b);
+		ft_selection_sort(stack_b, stack_a);
+	}
+	else
+		ft_error3(stack_a, stack_b);
+}
 {
 	if (cont == 2)
 		ft_swap(stack_a);
@@ -62,5 +83,5 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b, int cont)
 		ft_selection_sort(stack_b, stack_a);
 	}
 	else
-		ERROR;
+		ft_error3(stack_a, stack_b, num);
 }
