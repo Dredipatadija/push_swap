@@ -27,7 +27,7 @@ int ft_count_n(int argc, char **argv)
 	int cont;
 
 	cont = 0;
-	while (argc != 0)
+	while (argc > 0)
 	{
 		j = 0;
 		while (argv[argc][j])

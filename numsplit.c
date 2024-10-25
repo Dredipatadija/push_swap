@@ -24,7 +24,7 @@ void	ft_intlimit(char **str, int *stack)
 	i = 0;
 	while (str[i])
 	{
-		if (ft_numlen(str[i]) > 10 || ft_atoll_chek(str[i]) > 2147483647
+		if (ft_numlen(str[i]) > 10 || ft_atoll_check(str[i]) > 2147483647
 			|| ft_atoll_check(str[i]) < -2147483648)
 		{
 			ft_freen(str);

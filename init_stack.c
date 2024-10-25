@@ -34,6 +34,20 @@ int ft_index(int *num, int data)
     return (i);
 }
 
+int	ft_push_init(t_stack *stack, int data)
+{
+	t_node  *new;
+
+	new = malloc(sizeof(t_node));
+	if (!new)
+		return (1);
+	new->data = data;
+	new->next = stack->head;
+	stack->head = new;
+	stack->size++;
+	return (0);
+}
+
 void    ft_init(t_stack *stack_a, t_stack *stack_b, int *num, int n)
 {
     t_node  *node;
@@ -46,7 +60,7 @@ void    ft_init(t_stack *stack_a, t_stack *stack_b, int *num, int n)
     i = n - 1;
     while (i > -1)
     {
-        if (ft_push(stack_a, num[n]) != 0)
+        if (ft_push_init(stack_a, num[n]) != 0)
             ft_error2(num);
         i--;
     }

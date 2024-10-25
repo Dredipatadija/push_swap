@@ -16,10 +16,10 @@ void	ft_push(t_stack *src, t_stack *dst)
 {
 	t_node	*temp;
 
-	if (!stack->head)
+	if (!src->head)
 		return ;
-	temp = stack->head;
-	stack->head = temp->next;
+	temp = src->head;
+	src->head = temp->next;
 	temp->next = dst->head;
 	dst->head = temp;
 	src->size--;
@@ -67,4 +67,10 @@ void	ft_rrotate(t_stack *stack, int n)
 		stack->head = last;
 		i++;
 	}
+}
+
+void	ft_rotate_both(t_stack *stack_a, t_stack *stack_b, int n)
+{
+	ft_rotate(stack_a, n);
+	ft_rotate(stack_b, n);
 }

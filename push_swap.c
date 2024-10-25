@@ -23,5 +23,5 @@ int main(int argc, char **argv)
 		ft_error2(num);
 	ft_init(&stack_a, &stack_b, num, n_num);
 	if (!ft_issorted(&stack_a))
-		ft_sort(&stack_a, &stack_b);
+		ft_sort(&stack_a, &stack_b, n_num);
 }

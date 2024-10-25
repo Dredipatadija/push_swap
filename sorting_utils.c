@@ -36,7 +36,7 @@ int	ft_getpos(t_stack *stack)
 	return (pos);
 }
 
-ft_squareroot(int n)
+int	ft_squareroot(int n)
 {
 	int	i;
 
