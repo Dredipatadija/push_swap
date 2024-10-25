@@ -46,7 +46,7 @@ int	ft_squareroot(int n)
 	while (i * i < n)
 		i++;
 	if (i * i > n)
-		if (n - ((i - 1) * (i - 1)) < n - (i * i))
+		if (n - ((i - 1) * (i - 1)) <= (i * i) - n)
 			return (i - 1);
 	return (i);
 }

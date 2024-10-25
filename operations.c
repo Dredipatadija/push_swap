@@ -28,6 +28,7 @@ void	ft_push(t_stack *src, t_stack *dst)
 
 void	ft_rotate(t_stack *stack, int n)
 {
+	t_node	*iter;
 	t_node	*temp;
 	int		i;
 
@@ -36,13 +37,13 @@ void	ft_rotate(t_stack *stack, int n)
 		return ;
 	while (i < n)
 	{
+		iter = stack->head;
 		temp = stack->head;
-		stack->head = temp->next;
-		while (temp->next)
-			temp = temp->next;
-		temp->next = stack->head;
-		stack->head = stack->head->next;
-		temp->next->next = NULL;
+		stack->head = iter->next;
+		while (iter->next)
+			iter = iter->next;
+		iter->next = temp;
+		temp->next = NULL;
 		i++;
 	}
 }

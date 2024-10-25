@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void    ft_sort(int *num, int n)
+void    ft_sort_init(int *num, int n)
 {
     int     i;
     int     j;
@@ -60,11 +60,11 @@ void    ft_init(t_stack *stack_a, t_stack *stack_b, int *num, int n)
     i = n - 1;
     while (i > -1)
     {
-        if (ft_push_init(stack_a, num[n]) != 0)
+        if (ft_push_init(stack_a, num[i]) != 0)
             ft_error2(num);
         i--;
     }
-    ft_sort(num, n);
+    ft_sort_init(num, n);
     node = stack_a->head;
     while (node)
     {
