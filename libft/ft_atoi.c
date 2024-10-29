@@ -24,9 +24,9 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	while ((str[i] > 8 && str[i] < 14) || str[i] == ' ')
 		i++;
-	if (&str[i] == "-2147483648")
+	if (ft_strncmp(&str[i], "-2147483648", 11) == 0)
 		return (-2147483648);
-	if (&str[i] == "2147483647")
+	if (ft_strncmp(&str[i], "2147483647", 10) == 0)
 		return (2147483647);
 	if (str[i] == '-' || str[i] == '+')
 	{

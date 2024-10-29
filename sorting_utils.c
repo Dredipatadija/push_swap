@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 int	ft_issorted(t_stack *stack)
 {
 	t_node	*node;

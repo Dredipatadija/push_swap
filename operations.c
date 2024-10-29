@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void	ft_swap(t_stack *stack)
+void	ft_swap(t_stack *stack, char c)
 {
 	t_node  *temp;
 
@@ -10,9 +10,10 @@ void	ft_swap(t_stack *stack)
 	stack->head = temp->next;
 	temp->next = stack->head->next;
 	stack->head->next = temp;
+	ft_printf("s%c\n", c);
 }  
 
-void	ft_push(t_stack *src, t_stack *dst)
+void	ft_push(t_stack *src, t_stack *dst, char c)
 {
 	t_node	*temp;
 
@@ -24,9 +25,10 @@ void	ft_push(t_stack *src, t_stack *dst)
 	dst->head = temp;
 	src->size--;
 	dst->size++;
+	ft_printf("p%c\n", c);
 }
 
-void	ft_rotate(t_stack *stack, int n)
+void	ft_rotate(t_stack *stack, int n, char c)
 {
 	t_node	*iter;
 	t_node	*temp;
@@ -45,10 +47,11 @@ void	ft_rotate(t_stack *stack, int n)
 		iter->next = temp;
 		temp->next = NULL;
 		i++;
+		ft_printf("r%c\n", c);
 	}
 }
 
-void	ft_rrotate(t_stack *stack, int n)
+void	ft_rrotate(t_stack *stack, int n, char c)
 {
 	t_node	*temp;
 	t_node	*last;
@@ -67,11 +70,35 @@ void	ft_rrotate(t_stack *stack, int n)
 		last->next = stack->head;
 		stack->head = last;
 		i++;
+		ft_printf("rr%c\n", c);
 	}
 }
 
-void	ft_rotate_both(t_stack *stack_a, t_stack *stack_b, int n)
+void	ft_rotate_both(t_stack *s_a, t_stack *s_b, int n)
 {
-	ft_rotate(stack_a, n);
-	ft_rotate(stack_b, n);
+	t_node	*iter_a;
+	t_node	*temp_a;
+	t_node	*iter_b;
+	t_node	*temp_b;
+
+	if (s_a->size < 2 || !s_a->head || s_b->size < 2 || !s_b->head)
+		return ;
+	while (n-- > 0)
+	{
+		iter_a = s_a->head;
+		iter_b = s_b->head;
+		temp_a = s_a->head;
+		temp_b = s_b->head;
+		s_a->head = iter_a->next;
+		s_b->head = iter_b->next;
+		while (iter_a->next)
+			iter_a = iter_a->next;
+		while (iter_b->next)
+			iter_b = iter_b->next;
+		iter_a->next = temp_a;
+		iter_b->next = temp_b;
+		temp_a->next = NULL;
+		temp_b->next = NULL;
+		ft_printf("rr\n");
+	}
 }

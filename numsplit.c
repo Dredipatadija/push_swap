@@ -53,7 +53,7 @@ int *ft_numbers(int argc, char  **argv, int n_num)
 	{
 		nstr = ft_split(argv[i++], ' ');
 		if (!nstr)
-			return (ft_freestack(num));
+			return (ft_freeint(num));
 		ft_intlimit(nstr, num);
 		s = 0;
 		while (nstr[s])
