@@ -9,10 +9,14 @@ int ft_c_parse(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
+
 		while (argv[i][j])
 		{
 			if (ft_isdigit(argv[i][j]) == 0 && argv[i][j] != '-'
 			&& argv[i][j] != '+' && argv[i][j] != ' ')
+				return (-1);
+			if ((argv[i][j] == '-' && ft_isdigit(argv[i][j + 1]) == 0) ||
+				(argv[i][j] == '+' && ft_isdigit(argv[i][j + 1]) == 0))
 				return (-1);
 			j++;
 		}

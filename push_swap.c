@@ -7,7 +7,7 @@ int main(int argc, char **argv)
 	t_stack stack_a;
 	t_stack stack_b;
 
-	if (argc < 2)
+	if (argc == 1)
 		ft_error1();
 	if (ft_c_parse(argc, argv) != 0)
 		ft_error1();
@@ -24,4 +24,5 @@ int main(int argc, char **argv)
 	ft_init(&stack_a, &stack_b, num, n_num);
 	if (!ft_issorted(&stack_a))
 		ft_sort(&stack_a, &stack_b, n_num, num);
+	return (0);
 }

@@ -46,5 +46,7 @@ void		ft_ksort_atob(t_stack *stack_a, t_stack *stack_b);
 int			ft_squareroot(int n);
 int			ft_getpos(t_stack *stack);
 int			ft_issorted(t_stack *stack);
+void		ft_sort_three(t_stack *stack);
+void		ft_sort_four(t_stack *stack_a, t_stack *stack_b);
 
 #endif
