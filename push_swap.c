@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 	t_stack stack_b;
 
 	if (argc < 2)
-		exit(1);
+		ft_error1();
 	if (ft_c_parse(argc, argv) != 0)
 		ft_error1();
 	if (ft_content(argc, argv) != 0)

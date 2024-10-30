@@ -30,6 +30,7 @@ int ft_count_n(int argc, char **argv)
 	while (argc > 1)
 	{
 		j = 0;
+		argc--;
 		while (argv[argc][j])
 		{
 			if (ft_isdigit(argv[argc][j]) == 1 && (argv[argc][j + 1] == ' '
@@ -37,7 +38,6 @@ int ft_count_n(int argc, char **argv)
 				cont++;   
 			j++;
 		}
-		argc--;
 	}
 	return (cont);
 }
@@ -49,6 +49,7 @@ int ft_content(int argc, char **argv)
 	while (argc > 1)
 	{
 		j = 0;
+		argc--;
 		while (argv[argc][j] != '\0')
 		{
 			if (ft_isdigit(argv[argc][j]) == 1)
