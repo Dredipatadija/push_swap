@@ -1,11 +1,11 @@
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	int	 *num;
-	int	 n_num;
-	t_stack stack_a;
-	t_stack stack_b;
+	int		*num;
+	int		n_num;
+	t_stack	stack_a;
+	t_stack	stack_b;
 
 	if (argc == 1)
 		ft_error1();

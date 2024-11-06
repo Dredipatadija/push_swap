@@ -1,10 +1,10 @@
 #include "push_swap.h"
 
-long long   ft_atoll_check(char *str)
+long long	ft_atoll_check(char *str)
 {
-	long long  result;
-	size_t	 i;
-	int		sign;
+	long long	result;
+	size_t		i;
+	int			sign;
 
 	i = 0;
 	result = 0;

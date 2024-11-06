@@ -1,15 +1,14 @@
 #include "push_swap.h"
 
-int ft_c_parse(int argc, char **argv)
+int	ft_c_parse(int argc, char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (i < argc)
 	{
 		j = 0;
-
 		while (argv[i][j])
 		{
 			if (ft_isdigit(argv[i][j]) == 0 && argv[i][j] != '-'
@@ -25,10 +24,10 @@ int ft_c_parse(int argc, char **argv)
 	return (0);
 }
 
-int ft_count_n(int argc, char **argv)
+int	ft_count_n(int argc, char **argv)
 {
-	int j;
-	int cont;
+	int	j;
+	int	cont;
 
 	cont = 0;
 	while (argc > 1)
@@ -39,16 +38,16 @@ int ft_count_n(int argc, char **argv)
 		{
 			if (ft_isdigit(argv[argc][j]) == 1 && (argv[argc][j + 1] == ' '
 				|| argv[argc][j + 1] == '\0'))
-				cont++;   
+				cont++;
 			j++;
 		}
 	}
 	return (cont);
 }
 
-int ft_content(int argc, char **argv)
+int	ft_content(int argc, char **argv)
 {
-	int j;
+	int	j;
 
 	while (argc > 1)
 	{
@@ -67,10 +66,10 @@ int ft_content(int argc, char **argv)
 	return (0);
 }
 
-int ft_check_dup(int *num, int cont)
+int	ft_check_dup(int *num, int cont)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;

@@ -25,7 +25,7 @@ void	ft_selection_sort(t_stack *stack_a, t_stack *stack_b)
 void	ft_ksort_atob(t_stack *stack_a, t_stack *stack_b)
 {
 	int	i;
-	int range;
+	int	range;
 
 	i = 0;
 	range = ft_squareroot(stack_a->size);
@@ -56,10 +56,6 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b, int cont, int *num)
 		ft_swap(stack_a, 'a');
 	else if (cont == 3)
 		ft_sort_three(stack_a);
-	/*else if (cont == 4)
-		ft_sort_four(stack_a, stack_b);
-	else if (cont == 5)
-		ft_sort_five(stack_a, stack_b);*/
 	else if (cont < 11)
 		ft_selection_sort(stack_a, stack_b);
 	else if (cont > 10)

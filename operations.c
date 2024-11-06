@@ -2,7 +2,7 @@
 
 void	ft_swap(t_stack *stack, char c)
 {
-	t_node  *temp;
+	t_node	*temp;
 
 	if (stack->size < 2 || !stack->head)
 		return ;
@@ -11,7 +11,7 @@ void	ft_swap(t_stack *stack, char c)
 	temp->next = stack->head->next;
 	stack->head->next = temp;
 	ft_printf("s%c\n", c);
-}  
+}
 
 void	ft_push(t_stack *src, t_stack *dst, char c)
 {
@@ -34,7 +34,7 @@ void	ft_rotate(t_stack *stack, int n, char c)
 	t_node	*temp;
 	int		i;
 
-	i  = 0;
+	i = 0;
 	if (stack->size < 2 || !stack->head)
 		return ;
 	while (i < n)

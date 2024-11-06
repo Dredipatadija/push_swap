@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-int ft_numlen(char *str)
+int	ft_numlen(char *str)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	len = 0;
@@ -19,7 +19,7 @@ int ft_numlen(char *str)
 
 void	ft_intlimit(char **str, int *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -36,12 +36,12 @@ void	ft_intlimit(char **str, int *stack)
 	}
 }
 
-int *ft_numbers(int argc, char  **argv, int n_num)
+int	*ft_numbers(int argc, char **argv, int n_num)
 {
-	int	 *num;
-	int	 i;
-	int	 n;
-	int	 s;
+	int		*num;
+	int		i;
+	int		n;
+	int		s;
 	char	**nstr;
 
 	num = (int *)malloc(sizeof(int) * n_num);

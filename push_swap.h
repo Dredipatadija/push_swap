@@ -5,16 +5,16 @@
 
 typedef struct s_node
 {
-	int			 data;
-	int			 index;
-	struct s_node   *next;
-}   t_node;
+	int				data;
+	int				index;
+	struct s_node	*next;
+}	t_node;
 
 typedef struct s_stack
 {
-	t_node  *head;
-	int	 size;
-}   t_stack;
+	t_node	*head;
+	int		size;
+}	t_stack;
 
 int			main(int argc, char **argv);
 int			ft_c_parse(int argc, char **argv);
