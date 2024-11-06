@@ -63,8 +63,6 @@ int ft_content(int argc, char **argv)
 			}
 			j++;
 		}
-		if (argv[argc][j] == '\0')
-			return (-1);
 	}
 	return (0);
 }

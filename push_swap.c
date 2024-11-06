@@ -15,7 +15,8 @@ int main(int argc, char **argv)
 		ft_error1();
 	n_num = ft_count_n(argc, argv);
 	if (n_num < 1)
-		ft_error1();
+		return (0);
+	//	ft_error1();
 	num = ft_numbers(argc, argv, n_num);
 	if (!num)
 		ft_error1();
