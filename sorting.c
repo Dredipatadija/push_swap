@@ -65,4 +65,5 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b, int cont, int *num)
 	}
 	else
 		ft_error3(stack_a, stack_b, num);
+	ft_freestack(stack_a);
 }

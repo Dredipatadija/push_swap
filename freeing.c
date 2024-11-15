@@ -28,3 +28,15 @@ void	ft_freest(t_stack *stack)
 	}
 	free(stack);
 }
+
+void	ft_freestack(t_stack *stack)
+{
+	t_node	*tmp;
+
+	while (stack->head)
+	{
+		tmp = stack->head;
+		stack->head = stack->head->next;
+		free(tmp);
+	}
+}
