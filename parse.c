@@ -48,20 +48,25 @@ int	ft_count_n(int argc, char **argv)
 int	ft_content(int argc, char **argv)
 {
 	int	j;
+	int	digit;
 
 	while (argc > 1)
 	{
 		j = 0;
+		digit = 0;
 		argc--;
 		while (argv[argc][j] != '\0')
 		{
 			if (ft_isdigit(argv[argc][j]) == 1)
 			{
+				digit = 1;
 				argc--;
 				break ;
 			}
 			j++;
 		}
+		if (digit == 0)
+			return (-1);
 	}
 	return (0);
 }
