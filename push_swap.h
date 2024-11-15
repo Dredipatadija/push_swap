@@ -32,7 +32,7 @@ void		ft_error1(void);
 void		ft_error2(int *num);
 void		ft_error3(t_stack *stack_a, t_stack *stack_b, int *num);
 void		ft_init(t_stack *stack_a, t_stack *stack_b, int *num, int n);
-int			ft_push_init(t_stack *stack, int data);
+void		ft_push_init(t_stack *stack, int data);
 int			ft_index(int *num, int data);
 void		ft_sort_init(int *num, int n);
 void		ft_swap(t_stack *stack, char c);
