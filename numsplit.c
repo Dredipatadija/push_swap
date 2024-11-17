@@ -23,6 +23,8 @@ int	ft_numlen(char *str)
 		i++;
 	while (str[i] != '\0')
 	{
+		if (ft_isdigit(str[i]) == 0)
+			return (-1);
 		len++;
 		i++;
 	}
@@ -37,7 +39,7 @@ void	ft_intlimit(char **str, int *stack)
 	while (str[i])
 	{
 		if (ft_numlen(str[i]) > 10 || ft_atoll_check(str[i]) > 2147483647
-			|| ft_atoll_check(str[i]) < -2147483648)
+			|| ft_atoll_check(str[i]) < -2147483648 || ft_numlen(str[i]) == -1)
 		{
 			ft_freen(str);
 			free(stack);
