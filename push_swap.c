@@ -36,6 +36,7 @@ int	main(int argc, char **argv)
 	ft_init(&stack_a, &stack_b, num, n_num);
 	if (!ft_issorted(&stack_a))
 		ft_sort(&stack_a, &stack_b, n_num, num);
+	ft_freestack(&stack_a);
 	free(num);
 	return (0);
 }

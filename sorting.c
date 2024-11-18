@@ -52,7 +52,7 @@ void	ft_ksort_atob(t_stack *stack_a, t_stack *stack_b)
 		{
 			ft_push(stack_a, stack_b, 'b');
 			i++;
-			if (stack_a->head->index <= i + range)
+			if (stack_a->head->index > i + range)
 				ft_rotate_both(stack_a, stack_b, 1);
 			else
 				ft_rotate(stack_b, 1, 'b');
@@ -62,24 +62,41 @@ void	ft_ksort_atob(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
+int	ft_count_r(t_node *stack, int index)
+{
+	int	counter;
+
+	counter = 0;
+	while (stack && stack->index != index)
+	{
+		stack = stack->next;
+		counter++;
+	}
+	return (counter);
+}
+
 void	ft_ksort_btoa(t_stack *stack_b, t_stack *stack_a)
 {
-	int	min;
+	int	rb_count;
+	int	rrb_count;
 	int	size;
 
-	size = stack_b->size - 1;
-	while (size >= 0)
+	size = stack_b->size;
+	while (size - 1 >= 0)
 	{
-		min = ft_getpos(stack_b);
-		if (min <= (stack_b-> size / 2))
+		rb_count = ft_count_r(stack_b->head, size - 1);
+		rrb_count = (size + 3) - rb_count;
+		if (rb_count <= rrb_count)
 		{
-			ft_rotate(stack_b, min, 'b');
+			while (stack_b->head->index != size - 1)
+				ft_rotate(stack_b, 1, 'b');
 			ft_push(stack_b, stack_a, 'a');
 			size--;
 		}
 		else
 		{
-			ft_rrotate(stack_b, size - min, 'b');
+			while (stack_b->head->index != size - 1)
+				ft_rrotate(stack_b, 1, 'b');
 			ft_push(stack_b, stack_a, 'a');
 			size--;
 		}
@@ -101,5 +118,4 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b, int cont, int *num)
 	}
 	else
 		ft_error3(stack_a, stack_b, num);
-	ft_freestack(stack_a);
 }

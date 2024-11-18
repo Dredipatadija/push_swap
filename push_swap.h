@@ -62,5 +62,6 @@ int			ft_issorted(t_stack *stack);
 void		ft_sort_three(t_stack *stack);
 void		ft_sort_four(t_stack *stack_a, t_stack *stack_b);
 void		ft_freestack(t_stack *stack);
+int			ft_count_r(t_node *stack, int index);
 
 #endif
