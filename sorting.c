@@ -40,7 +40,7 @@ void	ft_ksort_atob(t_stack *stack_a, t_stack *stack_b)
 	int	range;
 
 	i = 0;
-	range = ft_squareroot(stack_a->size);
+	range = ft_squareroot(stack_a->size) * 7 / 5;
 	while (stack_a->head)
 	{
 		if (stack_a->head->index <= i)
@@ -52,13 +52,37 @@ void	ft_ksort_atob(t_stack *stack_a, t_stack *stack_b)
 		{
 			ft_push(stack_a, stack_b, 'b');
 			i++;
-			if (stack_a->head->index > i + range)
+			if (stack_a->head->index <= i + range)
 				ft_rotate_both(stack_a, stack_b, 1);
 			else
 				ft_rotate(stack_b, 1, 'b');
 		}
 		else
 			ft_rotate(stack_a, 1, 'a');
+	}
+}
+
+void	ft_ksort_btoa(t_stack *stack_b, t_stack *stack_a)
+{
+	int	min;
+	int	size;
+
+	size = stack_b->size - 1;
+	while (size >= 0)
+	{
+		min = ft_getpos(stack_b);
+		if (min <= (stack_b-> size / 2))
+		{
+			ft_rotate(stack_b, min, 'b');
+			ft_push(stack_b, stack_a, 'a');
+			size--;
+		}
+		else
+		{
+			ft_rrotate(stack_b, size - min, 'b');
+			ft_push(stack_b, stack_a, 'a');
+			size--;
+		}
 	}
 }
 
@@ -73,7 +97,7 @@ void	ft_sort(t_stack *stack_a, t_stack *stack_b, int cont, int *num)
 	else if (cont > 10)
 	{
 		ft_ksort_atob(stack_a, stack_b);
-		ft_selection_sort(stack_b, stack_a);
+		ft_ksort_btoa(stack_b, stack_a);
 	}
 	else
 		ft_error3(stack_a, stack_b, num);

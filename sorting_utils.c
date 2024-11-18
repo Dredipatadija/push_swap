@@ -31,23 +31,23 @@ int	ft_getpos(t_stack *stack)
 	t_node	*i;
 	int		min;
 	int		pos;
+	int		min_pos;
 
 	i = stack->head;
 	min = i->data;
 	pos = 0;
+	min_pos = 0;
 	while (i)
 	{
 		if (i->data < min)
+		{
 			min = i->data;
-		i = i->next;
-	}
-	i = stack->head;
-	while (i->data != min)
-	{
+			min_pos = pos;
+		}
 		i = i->next;
 		pos++;
 	}
-	return (pos);
+	return (min_pos);
 }
 
 int	ft_squareroot(int n)
