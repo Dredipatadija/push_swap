@@ -29,20 +29,25 @@ int	ft_issorted(t_stack *stack)
 int	ft_getpos(t_stack *stack)
 {
 	t_node	*i;
-	int		index;
+	int		min;
 	int		pos;
+	int		min_pos;
 
 	i = stack->head;
-	index = i->index;
+	min = i->data;
 	pos = 0;
-	while (i->next)
+	min_pos = 0;
+	while (i)
 	{
-		if (index < i->index)
-			index = i->index;
-		pos++;
+		if (i->data < min)
+		{
+			min = i->data;
+			min_pos = pos;
+		}
 		i = i->next;
+		pos++;
 	}
-	return (pos);
+	return (min_pos);
 }
 
 int	ft_squareroot(int n)
