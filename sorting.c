@@ -64,36 +64,47 @@ void	ft_ksort_atob(t_stack *stack_a, t_stack *stack_b)
 
 void	ft_ksort_btoa(t_stack *stack_b, t_stack *stack_a)
 {
-	int	min;
-	int	size;
+	int		min;
+	int		size;
+	t_node	*nodo;
 
 	size = stack_b->size - 1;
 	while (size >= 0)
 	{
 		min = ft_getpos(stack_b);
-		if (min <= (stack_b-> size / 2))
-		{
+		if (min <= (size / 2))
 			ft_rotate(stack_b, min, 'b');
-			ft_push(stack_b, stack_a, 'a');
-			size--;
-		}
 		else
-		{
 			ft_rrotate(stack_b, size - min, 'b');
-			ft_push(stack_b, stack_a, 'a');
-			size--;
-		}
+		ft_push(stack_b, stack_a, 'a');
+		size--;
+	}
+	nodo = stack_a->head;
+	while (nodo->next != NULL)
+	{
+		printf("%d ", nodo->data);
+		nodo = nodo->next;
 	}
 }
 
 void	ft_sort(t_stack *stack_a, t_stack *stack_b, int cont, int *num)
 {
+	t_node	*nodo;
+
 	if (cont == 2)
 		ft_swap(stack_a, 'a');
 	else if (cont == 3)
 		ft_sort_three(stack_a);
 	else if (cont < 11)
+	{
 		ft_selection_sort(stack_a, stack_b);
+		nodo = stack_a->head;
+		while (nodo->next != NULL)
+		{
+			printf("%d ", nodo->data);
+			nodo = nodo->next;
+		}
+	}
 	else if (cont > 10)
 	{
 		ft_ksort_atob(stack_a, stack_b);
