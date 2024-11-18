@@ -60,9 +60,9 @@ int	ft_squareroot(int n)
 	while (i * i < n)
 		i++;
 	if (i * i > n)
-		if (n - ((i - 1) * (i - 1)) <= (i * i) - n)
-			return (i - 1);
-	return (i);
+		if ((i * i - n) < ((i - 1) * (i - 1) + (-n)))
+			return (i);
+	return (i - 1);
 }
 
 void	ft_sort_three(t_stack *stack)

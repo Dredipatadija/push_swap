@@ -55,6 +55,7 @@ void		ft_rotate_both(t_stack *stack_a, t_stack *stack_b, int n);
 void		ft_sort(t_stack *stack_a, t_stack *stack_b, int cont, int *num);
 void		ft_selection_sort(t_stack *stack_a, t_stack *stack_b);
 void		ft_ksort_atob(t_stack *stack_a, t_stack *stack_b);
+void		ft_ksort_btoa(t_stack *stack_a, t_stack *stack_b);
 int			ft_squareroot(int n);
 int			ft_getpos(t_stack *stack);
 int			ft_issorted(t_stack *stack);
