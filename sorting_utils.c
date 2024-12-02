@@ -90,17 +90,3 @@ void	ft_sort_three(t_stack *stack)
 		}
 	}
 }
-
-void	ft_sort_four(t_stack *stack_a, t_stack *stack_b)
-{
-	int	min;
-
-	min = ft_getpos(stack_a);
-	if (min <= (stack_a->size / 2))
-		ft_rotate(stack_a, min, 'a');
-	else
-		ft_rrotate(stack_a, stack_a->size - min, 'a');
-	ft_push(stack_a, stack_b, 'b');
-	ft_sort_three(stack_a);
-	ft_push(stack_b, stack_a, 'a');
-}
